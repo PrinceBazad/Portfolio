@@ -1,0 +1,300 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  font-size: 1.18rem;
+}
+
+p, li, .hero-intro, .project-card p, .contact-info p, .contact-info a, .skills, .footer, .footer-text {
+  font-size: 1.15em;
+}
+
+h1, .hero-title {
+  font-size: 3.5rem;
+}
+
+h2, .skills h2, .projects h2, .contact h2 {
+  font-size: 2.3rem;
+}
+
+h3, .project-card h3 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 1.1rem;
+  }
+  h1, .hero-title {
+    font-size: 3rem;
+  }
+  h2, .skills h2, .projects h2, .contact h2 {
+    font-size: 2.1rem;
+  }
+  h3, .project-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  h1, .hero-title {
+    font-size: 2.5rem;
+  }
+  h2, .skills h2, .projects h2, .contact h2 {
+    font-size: 1.8rem;
+  }
+  h3, .project-card h3 {
+    font-size: 1.2rem;
+  }
+  p, li, .hero-intro, .project-card p, .contact-info p, .contact-info a, .skills, .footer, .footer-text {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+  h1, .hero-title {
+    font-size: 2.2rem;
+  }
+  h2, .skills h2, .projects h2, .contact h2 {
+    font-size: 1.6rem;
+  }
+  h3, .project-card h3 {
+    font-size: 1.1rem;
+  }
+  p, li, .hero-intro, .project-card p, .contact-info p, .contact-info a, .skills, .footer, .footer-text {
+    font-size: 1.05em;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 0.9rem;
+  }
+  h1, .hero-title {
+    font-size: 2rem;
+  }
+  h2, .skills h2, .projects h2, .contact h2 {
+    font-size: 1.4rem;
+  }
+  h3, .project-card h3 {
+    font-size: 1rem;
+  }
+  p, li, .hero-intro, .project-card p, .contact-info p, .contact-info a, .skills, .footer, .footer-text {
+    font-size: 1em;
+  }
+}
+
+body.theme-dark {
+  background: #111;
+  color: #fff;
+}
+body.theme-light {
+  background: #fff;
+  color: #111;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+section {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+.theme-dark .navbar {
+  background: #111;
+  color: #fff;
+}
+.theme-light .navbar {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 4px 24px #0001;
+}
+
+.theme-dark .navbar-links li a {
+  color: #fff;
+}
+.theme-light .navbar-links li a {
+  color: #111;
+}
+
+.theme-dark .navbar-links li a:hover {
+  color: #ffd200;
+  background: #222;
+}
+.theme-light .navbar-links li a:hover {
+  color: #fff;
+  background: #ffd200;
+}
+
+.theme-dark .skills {
+  background: #111;
+}
+.theme-light .skills {
+  background: #f7f7f7;
+}
+
+.theme-dark .projects {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+}
+.theme-light .projects {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.theme-dark .contact {
+  background: rgba(255,255,255,0.10);
+}
+.theme-light .contact {
+  background: #ebeced;
+}
+
+.theme-dark .footer {
+  background: #111;
+  color: #fff;
+}
+.theme-light .footer {
+  background: #f5f5f5;
+  color: #111;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #ffd200 0%, #f7971e 100%) 1;
+}
+
+.theme-toggle {
+  margin-left: 1.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #ffd20033;
+  transition: background 0.3s, color 0.3s;
+}
+.theme-toggle:hover {
+  background: #222;
+  color: #ffd200;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.theme-light, .theme-light .navbar, .theme-light .skills, .theme-light .projects, .theme-light .contact, .theme-light .footer, .theme-light .hero-title, .theme-light .hero-subtitle, .theme-light .hero-intro, .theme-light .skill-name, .theme-light .project-card p, .theme-light .project-card h3, .theme-light .contact-info p, .theme-light .contact-info a, .theme-light .footer-text, .theme-light .contact-subtitle, .theme-light .contact-content h3, .theme-light .contact-value, .theme-light .contact-description, .theme-light .status-content h4, .theme-light .status-content p {
+  color: #111 !important;
+}
+
+.theme-light .navbar-links li a {
+  color: #111 !important;
+  background: #fff !important;
+}
+
+.theme-light .navbar-logo {
+  color: #111;
+}
+
+.theme-light .hero-socials a {
+  color: #111;
+  border: 1px solid #ffd20055;
+  background: #fffbe6;
+}
+
+.theme-light .hero-socials a:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+}
+
+.theme-light h1, .theme-light h2, .theme-light h3, .theme-light .hero-title, .theme-light .hero-subtitle, .theme-light .project-card h3, .theme-light .skills h2, .theme-light .contact h2, .theme-light .contact-content h3, .theme-light .status-content h4 {
+  color: #111 !important;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px #ffd20033, 0 1px 0 #fff;
+  line-height: 1.15;
+}
+
+.theme-dark h1, .theme-dark h2, .theme-dark h3, .theme-dark .hero-title, .theme-dark .hero-subtitle, .theme-dark .project-card h3, .theme-dark .skills h2, .theme-dark .contact h2, .theme-dark .contact-content h3, .theme-dark .status-content h4 {
+  color: #fff !important;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px #000a, 0 1px 0 #222;
+  line-height: 1.15;
+}
+
+.theme-dark, .theme-dark .navbar, .theme-dark .skills, .theme-dark .projects, .theme-dark .contact, .theme-dark .footer, .theme-dark .hero-title, .theme-dark .hero-subtitle, .theme-dark .hero-intro, .theme-dark .skill-name, .theme-dark .project-card p, .theme-dark .project-card h3, .theme-dark .contact-info p, .theme-dark .contact-info a, .theme-dark .footer-text, .theme-dark .contact-subtitle, .theme-dark .contact-content h3, .theme-dark .contact-value, .theme-dark .contact-description, .theme-dark .status-content h4, .theme-dark .status-content p {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.theme-light .App {
+  background: #494e8c;
+}
+
+.theme-light .hamburger span {
+  background: #111 !important;
+}
+
+.theme-light .navbar-links li a {
+  color: #111 !important;
+}
+
+.theme-light .navbar-links li a:hover {
+  color: #fff !important;
+  background: #ffd200 !important;
+}
