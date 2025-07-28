@@ -2,6 +2,8 @@ import React from 'react';
 import './Hero.css';
 import { Typewriter } from 'react-simple-typewriter';
 import myPhoto from '../myphoto/resume.jpg';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCode, FaMapMarkerAlt, FaClock, FaBriefcase } from 'react-icons/fa';
+
 
 const Hero = () => {
   return (

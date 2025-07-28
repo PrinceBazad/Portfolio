@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import resumePDF from '../myphoto/Princebazad.pdf';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCode, FaMapMarkerAlt, FaClock, FaBriefcase } from 'react-icons/fa';
+
 
 function smoothScrollTo(element, duration = 1200) {
   const targetY = element.getBoundingClientRect().top + window.pageYOffset;
