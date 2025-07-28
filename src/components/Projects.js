@@ -13,33 +13,32 @@ import {
 
 const projects = [
   {
-    title: "Multi-user-chatroom",
+    title: "Multi Lingual chatroom",
     description:
-      "Developed a chatroom where multiple users can simultaneously chat with each other from all over the world in different languages. The chats are seen in the particular language selected by the user.",
+      "Flask-powered global chatroom with real-time messaging and automatic language translation. Users worldwide can communicate simultaneously in their preferred languages, with messages automatically translated using Google Translate API for barrier-free international conversations.",
     tools: "Flask, googletrans library",
     button: true,
     link: "https://github.com/PrinceBazad/Multi_Lingual_Chatroom/",
   },
   {
     title: "Hotel website",
-    description:
-      "Developed an interface as well as backend for the website in which the users are able to book the room via cash and check the availability of the room and also login to see the details.",
+    description:"A hotel management system  enables guests to check room availability in real-time, make secure bookings with cash payment options, and access personalized account dashboards through user authentication. The system provides a seamless booking experience with user login functionality for viewing reservation details and managing bookings.",
     tools: "HTML, CSS, JavaScript, PHP",
     button: true,
     link: "https://github.com/PrinceBazad/hotel/",
   },
   {
-    title: "Quick-chat",
+    title: "Stock Market Analyzer",
     description:
-      "Developed a chat website that allows users to chat with each other in a secure way, send friend requests, and get notified when the user responds to your request.",
-    tools: "HTML, CSS, JavaScript, SQL, PHP",
+      "AI-powered stock market analysis platform with React frontend and Flask backend. Integrates Polygon.io for real-time stock data and OpenAI for intelligent insights, enabling users to query stocks in natural language and receive AI-driven investment recommendations with interactive charts.",
+    tools: "HTML, CSS, JavaScript, Python , React ,Json",
     button: true,
-    link: "https://github.com/PrinceBazad/hotel/",
+    link: "https://github.com/PrinceBazad/Stock_analyzer/",
   },
   {
     title: "IFFCO Branch(Azad)",
     description:
-      "A company site  where users can see news, updates, products, and services provided by the company branch. Users can also see the list of members/Directors. All these things are managed, added, updated, and deleted by the admin or super user.",
+      "Django-based corporate website for Azad branch with dynamic content management. Features include news updates, product/service listings, branch information, and team member profiles, all managed through a comprehensive admin dashboard with full CRUD operations for authorized users.",
     tools: "HTML, CSS, JavaScript, Django",
     button: true,
     link: "https://github.com/PrinceBazad/AZADCOOPERATIVE.in/",
