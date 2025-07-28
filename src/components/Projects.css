@@ -28,7 +28,7 @@
   min-width: 340px;
   max-width: 420px;
   min-height: 320px;
-  max-height: 420px;
+  max-height: 560px;
   transition: transform 0.35s, box-shadow 0.35s, border 0.35s;
   animation: cardPop 0.8s;
   border: 2.5px solid transparent;
