@@ -40,7 +40,7 @@ const projects = [
     title: "IFFCO Branch(Azad)",
     description:
       "A company site  where users can see news, updates, products, and services provided by the company branch. Users can also see the list of members/Directors. All these things are managed, added, updated, and deleted by the admin or super user.",
-    tools: "HTML, CSS, JavaScript, Django (framework)",
+    tools: "HTML, CSS, JavaScript, Django",
     button: true,
     link: "https://github.com/PrinceBazad/AZADCOOPERATIVE.in/",
   },
