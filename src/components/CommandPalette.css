@@ -1,0 +1,212 @@
+.command-backdrop {
+  position: fixed;
+  z-index: 300;
+  inset: 0;
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  padding: min(18vh, 150px) 20px 20px;
+  background: rgba(3, 5, 12, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.command-dialog {
+  width: min(100%, 590px);
+  max-height: min(72vh, 620px);
+  padding: 14px;
+  overflow: hidden;
+  background: var(--surface-strong);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 22px;
+  box-shadow: 0 35px 120px rgba(0, 0, 0, 0.55), 0 0 50px rgba(167, 139, 250, 0.11);
+  animation: command-appear 180ms ease-out both;
+}
+
+.command-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px 12px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+}
+
+.command-search > svg {
+  flex: 0 0 auto;
+}
+
+.command-search input {
+  width: 100%;
+  padding: 6px 0;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 0.92rem;
+  outline: 0;
+}
+
+.command-search input::placeholder {
+  color: var(--muted);
+}
+
+.command-close {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.command-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 17px 9px 9px;
+}
+
+.command-heading h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.command-heading span {
+  color: var(--muted);
+  font-size: 0.55rem;
+  letter-spacing: 0.09em;
+}
+
+.command-list {
+  display: grid;
+  max-height: 47vh;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.command-item {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  text-align: left;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.command-item:hover,
+.command-item.active {
+  background: rgba(182, 255, 108, 0.08);
+  border-color: rgba(182, 255, 108, 0.19);
+}
+
+.command-item-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  color: var(--accent);
+  background: rgba(182, 255, 108, 0.08);
+  border-radius: 9px;
+}
+
+.command-item-arrow {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.72rem;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.command-item.active .command-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.command-empty {
+  margin: 0;
+  padding: 22px 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.command-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+  padding: 12px 9px 2px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.61rem;
+}
+
+.command-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.command-footer kbd {
+  min-width: 17px;
+  padding: 1px 4px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@keyframes command-appear {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+body.theme-light .command-backdrop {
+  background: rgba(24, 27, 38, 0.42);
+}
+
+@media (max-width: 520px) {
+  .command-backdrop {
+    padding: 12vh 12px 12px;
+  }
+
+  .command-dialog {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .command-footer {
+    gap: 8px;
+  }
+}

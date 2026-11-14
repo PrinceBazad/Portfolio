@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCode, FaMapMarkerAlt, FaClock, FaBriefcase } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCode, FaClock, FaBriefcase } from 'react-icons/fa';
 
 const Contact = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -106,6 +106,17 @@ const Contact = () => {
             <p>Freelance Projects • Full-time Opportunities • Collaborations</p>
           </div>
         </div>
+      </div>
+
+      <div className="contact-cta">
+        <div className="contact-cta-copy">
+          <span className="contact-cta-eyebrow">GOT A PROJECT IN MIND?</span>
+          <h3>Let’s build something memorable.</h3>
+          <p>Have an idea, an opportunity, or just want to say hello? My inbox is open.</p>
+        </div>
+        <a className="contact-cta-button" href="mailto:princebazad3@gmail.com?subject=Let%27s%20build%20something">
+          Start a conversation <FaArrowRight aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

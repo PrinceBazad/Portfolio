@@ -1,0 +1,513 @@
+.experience-backdrop {
+  position: fixed;
+  z-index: 320;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(3, 5, 12, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.experience-dialog {
+  width: min(100%, 940px);
+  max-height: 92vh;
+  padding: clamp(16px, 3vw, 28px);
+  overflow: auto;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 86% 9%, rgba(167, 139, 250, 0.13), transparent 38%),
+    var(--surface-strong);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 25px;
+  box-shadow: 0 35px 120px rgba(0, 0, 0, 0.58);
+  animation: experience-enter 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.experience-header,
+.experience-header > div {
+  display: flex;
+}
+
+.experience-header {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.experience-header > div {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.experience-eyebrow,
+.hub-desktop-topline,
+.hub-desktop-taskbar,
+.hub-arcade-heading > div:first-child > span,
+.hub-arcade-footer {
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.experience-header h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.45rem);
+}
+
+.experience-close {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.experience-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+
+.experience-tabs button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.experience-tabs button[aria-selected="true"] {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.experience-panel {
+  min-height: 390px;
+}
+
+.hub-desktop {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 19px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 76% 32%, rgba(182, 255, 108, 0.16), transparent 29%),
+    radial-gradient(ellipse at 31% 61%, rgba(167, 139, 250, 0.24), transparent 36%),
+    linear-gradient(135deg, #121b2c, #19152d 58%, #132b32);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+}
+
+.hub-desktop-topline,
+.hub-desktop-taskbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hub-desktop-icons {
+  display: grid;
+  width: min(100%, 430px);
+  grid-template-columns: repeat(3, minmax(75px, 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  margin: 22px 0;
+}
+
+.hub-desktop-icons button {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 7px 4px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.66rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hub-desktop-icons button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.hub-desktop-icons button > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--accent);
+  background: rgba(15, 20, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 13px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  font-size: 1.1rem;
+}
+
+.hub-desktop-window {
+  width: min(100%, 360px);
+  margin: 0 0 auto auto;
+  padding: 17px;
+  background: rgba(14, 17, 29, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.hub-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.hub-window-bar:active {
+  cursor: grabbing;
+}
+
+.hub-window-bar > span {
+  color: var(--accent);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.hub-window-bar button {
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.hub-desktop-window strong {
+  display: block;
+  margin: 8px 0 5px;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+}
+
+.hub-desktop-window p {
+  margin: 0;
+  color: #c1c5d4;
+  font-size: 0.75rem;
+}
+
+.hub-window-open {
+  margin-top: 12px;
+  padding: 7px 10px;
+  color: #10130d;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.hub-desktop-taskbar {
+  margin-top: 18px;
+  padding: 10px 12px;
+  color: #e8eaff;
+  background: rgba(10, 12, 21, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+}
+
+.hub-terminal {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #070b10;
+  border: 1px solid rgba(182, 255, 108, 0.23);
+  border-radius: 17px;
+  box-shadow: inset 0 0 45px rgba(182, 255, 108, 0.045);
+  font-family: "Cascadia Code", "Consolas", monospace;
+  text-shadow: 0 0 8px rgba(164, 232, 164, 0.3);
+  animation: terminal-flicker 9s steps(1, end) infinite;
+}
+
+.hub-terminal::before,
+.hub-terminal::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.hub-terminal::before {
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0, 0, 0, 0.22) 3px 4px);
+  opacity: 0.7;
+  animation: terminal-scanline 12s linear infinite;
+}
+
+.hub-terminal::after {
+  background: radial-gradient(ellipse at center, transparent 38%, rgba(0, 0, 0, 0.36));
+}
+
+.hub-terminal > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hub-terminal-output {
+  flex: 1;
+  overflow: auto;
+}
+
+.hub-terminal-output p {
+  margin: 0 0 8px;
+  color: #a4e8a4;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.hub-terminal-output .terminal-command-line {
+  color: var(--accent);
+}
+
+.hub-terminal form {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(182, 255, 108, 0.15);
+}
+
+.hub-terminal form label {
+  color: var(--accent);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.hub-terminal input {
+  min-width: 0;
+  flex: 1;
+  padding: 8px 0;
+  color: #eaffdc;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 0.78rem;
+  outline: 0;
+}
+
+.hub-terminal form button,
+.hub-arcade-prompt button {
+  min-height: 34px;
+  padding: 0 11px;
+  color: #10130d;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+body.secret-theme .hub-terminal {
+  border-color: rgba(255, 92, 214, 0.48);
+  box-shadow: inset 0 0 55px rgba(255, 92, 214, 0.12), 0 0 22px rgba(255, 92, 214, 0.09);
+  animation-duration: 3.2s;
+}
+
+body.secret-theme .hub-terminal::before {
+  opacity: 0.95;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(255, 92, 214, 0.1) 2px 3px);
+}
+
+.hub-arcade {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: 17px;
+  background: linear-gradient(145deg, rgba(167, 139, 250, 0.12), rgba(8, 12, 22, 0.93));
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 17px;
+}
+
+.hub-arcade-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.hub-arcade-heading h3 {
+  margin: 3px 0 0;
+  font-size: 1.18rem;
+}
+
+.hub-arcade-score {
+  display: grid;
+  justify-items: end;
+}
+
+.hub-arcade-score b {
+  color: var(--accent);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.hub-arcade-score span {
+  color: var(--muted);
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.hub-arcade-board {
+  position: relative;
+  display: grid;
+  min-height: 275px;
+  flex: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(167, 139, 250, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, 0.07) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 50%, rgba(167, 139, 250, 0.14), transparent 70%);
+  background-size: 29px 29px, 29px 29px, auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  place-items: center;
+}
+
+.hub-arcade-orb {
+  position: absolute;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--accent) 34%, #5db0ff 72%);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  box-shadow: 0 0 13px #b6ff6c, 0 0 34px rgba(97, 218, 251, 0.75);
+  cursor: crosshair;
+  transform: translate(-50%, -50%);
+  animation: arcade-pulse 650ms ease-in-out infinite alternate;
+}
+
+.hub-arcade-prompt {
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+}
+
+.hub-arcade-prompt span {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.hub-arcade-prompt button {
+  min-height: 40px;
+  padding: 0 16px;
+}
+
+.hub-arcade-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.52rem;
+}
+
+@keyframes experience-enter {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes arcade-pulse {
+  to { transform: translate(-50%, -50%) scale(0.78); }
+}
+
+@keyframes terminal-scanline {
+  to { background-position: 0 36px; }
+}
+
+@keyframes terminal-flicker {
+  0%, 96%, 98%, 100% { opacity: 1; }
+  97% { opacity: 0.94; }
+}
+
+@media (max-width: 560px) {
+  .experience-backdrop {
+    padding: 8px;
+  }
+
+  .experience-dialog {
+    max-height: 94vh;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .experience-panel,
+  .hub-desktop,
+  .hub-terminal,
+  .hub-arcade {
+    min-height: 350px;
+  }
+
+  .hub-terminal {
+    padding: 13px;
+  }
+
+  .hub-terminal form {
+    flex-wrap: wrap;
+  }
+
+  .hub-terminal form label {
+    font-size: 0.6rem;
+  }
+
+  .hub-arcade-board {
+    min-height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-arcade-orb,
+  .hub-terminal,
+  .hub-terminal::before {
+    animation: none;
+  }
+}

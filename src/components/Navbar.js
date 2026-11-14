@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import resumePDF from '../myphoto/Princebazad.pdf';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCode, FaMapMarkerAlt, FaClock, FaBriefcase } from 'react-icons/fa';
+import { FaGamepad, FaSearch, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 
 function smoothScrollTo(element, duration = 1200) {
@@ -25,7 +25,7 @@ function smoothScrollTo(element, duration = 1200) {
   window.requestAnimationFrame(step);
 }
 
-const Navbar = () => {
+const Navbar = ({ onOpenCommands, onOpenExperiences, soundEnabled, onToggleSound }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState('dark');
 
@@ -80,6 +80,25 @@ const Navbar = () => {
           <input type="radio" name="theme" value="light" checked={theme === 'light'} onChange={() => setTheme('light')} />
           Light
         </label>
+      </div>
+      <div className="navbar-tools">
+        <button
+          className="sound-toggle"
+          type="button"
+          onClick={onToggleSound}
+          aria-label={soundEnabled ? 'Turn interface sounds off' : 'Turn interface sounds on'}
+          aria-pressed={soundEnabled}
+        >
+          {soundEnabled ? <FaVolumeUp aria-hidden="true" /> : <FaVolumeMute aria-hidden="true" />}
+        </button>
+        <button className="experience-trigger" type="button" onClick={onOpenExperiences} aria-label="Open interactive experiences">
+          <FaGamepad aria-hidden="true" />
+          <span>EXP</span>
+        </button>
+        <button className="command-trigger" type="button" onClick={onOpenCommands} aria-label="Open command palette">
+          <FaSearch aria-hidden="true" />
+          <span>CTRL K</span>
+        </button>
       </div>
       <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={handleMenuToggle}>
         <span></span>
