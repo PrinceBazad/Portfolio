@@ -57,6 +57,7 @@ const Skills = () => {
   const draggingSkillRef = useRef(null);
 
   useEffect(() => {
+    const cards = cardsRef.current;
     const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -77,11 +78,11 @@ const Skills = () => {
       },
       { threshold: 0.2 }
     );
-    cardsRef.current.forEach((el) => {
+    cards.forEach((el) => {
       if (el) observer.observe(el);
     });
     return () => {
-      cardsRef.current.forEach((el) => {
+      cards.forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };

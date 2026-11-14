@@ -54,11 +54,9 @@ const Navbar = ({ onOpenCommands, onOpenExperiences, soundEnabled, onToggleSound
     }
   };
 
-  const handleResumeClick = (e) => {
-    e.preventDefault();
+  const handleResumeClick = () => {
     setMenuOpen(false);
     document.body.style.overflow = 'unset';
-    window.open(resumePDF, '_blank');
   };
 
   return (
@@ -69,7 +67,7 @@ const Navbar = ({ onOpenCommands, onOpenExperiences, soundEnabled, onToggleSound
         <li><a href="#skills" onClick={e => handleLinkClick(e, 'skills')}>Skills</a></li>
         <li><a href="#projects" onClick={e => handleLinkClick(e, 'projects')}>Projects</a></li>
         <li><a href="#contact" onClick={e => handleLinkClick(e, 'contact')}>Contact</a></li>
-        <li><a href="#" onClick={handleResumeClick}>Resume</a></li>
+        <li><a href={resumePDF} target="_blank" rel="noreferrer" onClick={handleResumeClick}>Resume</a></li>
       </ul>
       <div className="theme-radio-group">
         <label className="theme-radio">
